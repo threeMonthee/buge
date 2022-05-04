@@ -1,9 +1,13 @@
 rootProject.name = 'buge'
 include 'gateway'
+
+
 include 'dashboard'
+
+
 include 'api-server'
-include 'user'
-include 'room'
+
+
 include 'common'
 include 'common:common-cache'
 findProject(':common:common-cache')?.name = 'common-cache'
@@ -13,4 +17,26 @@ include 'common:common-mq'
 findProject(':common:common-mq')?.name = 'common-mq'
 include 'common:common-repository'
 findProject(':common:common-repository')?.name = 'common-repository'
+
+include 'rpc'
+
+include 'rpc:user'
+findProject(':rpc:user')?.name = 'user'
+include 'rpc:user:rpc-user-client'
+findProject(':rpc:user:rpc-user-client')?.name = 'rpc-user-client'
+include 'rpc:user:rpc-user-server'
+findProject(':rpc:user:rpc-user-server')?.name = 'rpc-user-server'
+
+include 'rpc:room'
+findProject(':rpc:room')?.name = 'room'
+include 'rpc:room:rpc-room-client'
+findProject(':rpc:room:rpc-room-client')?.name = 'rpc-room-client'
+include 'rpc:room:rpc-room-server'
+findProject(':rpc:room:rpc-room-server')?.name = 'rpc-room-server'
+include 'rpc:activity'
+findProject(':rpc:activity')?.name = 'activity'
+include 'rpc:activity:rpc-activity-client'
+findProject(':rpc:activity:rpc-activity-client')?.name = 'rpc-activity-client'
+include 'rpc:activity:rpc-activity-server'
+findProject(':rpc:activity:rpc-activity-server')?.name = 'rpc-activity-server'
 
